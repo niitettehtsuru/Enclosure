@@ -136,25 +136,25 @@ class SmallBlock
     {
         if(this.blockHitsLeftWall(horizontalOffset))
         {
-            this.xCoord = horizontalOffset;//ensure block never goes beyond the left edge 
+            this.xCoord = horizontalOffset+1;//back off from the wall(so block never goes beyond the left edge) 
             this.setDirectionAfterHorizontalHit();
             this.hasCollidedWithAWall = true;
         }
         else if(this.blockHitsRightWall(width - horizontalOffset))
         {
-            this.xCoord = width - horizontalOffset - this.size-1;//ensure block never goes beyond the right edge 
+            this.xCoord = width - horizontalOffset - this.size-1;//back off from the wall(so block never goes beyond the right edge)  
             this.setDirectionAfterHorizontalHit(); 
             this.hasCollidedWithAWall = true;
         }
         else if(this.blockHitsTopWall(verticalOffset))
         {
-            this.yCoord = verticalOffset;//ensure block never goes beyond the top edge 
+            this.yCoord = verticalOffset+1;//back off from the wall(so block never goes beyond the top edge)
             this.setDirectionAfterVerticalHit(); 
             this.hasCollidedWithAWall = true;
         }
         else if(this.blockHitsBottomWall(height - verticalOffset))
         {
-            this.yCoord = height - verticalOffset - this.size-1;//ensure block never goes beyond the bottom edge 
+            this.yCoord = height - verticalOffset - this.size-1;//back off from the wall(so block never goes beyond the bottom edge)
             this.setDirectionAfterVerticalHit();
             this.hasCollidedWithAWall = true; 
         }  
